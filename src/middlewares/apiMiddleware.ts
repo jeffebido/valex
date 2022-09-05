@@ -11,5 +11,8 @@ export async function apiMiddleware(req: Request, res: Response, next: NextFunct
     if ( !company ) {
         return res.sendStatus(401);
     }
+
+    res.locals.company = company;
+
     next();
 } 
